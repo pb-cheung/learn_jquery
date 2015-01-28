@@ -1,5 +1,5 @@
 
-
+//jquery
 (function( window, undefined ) {
 	var jQuery = (function() {
 	// 构建jQuery对象

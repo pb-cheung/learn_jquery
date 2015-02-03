@@ -20,7 +20,12 @@ var	jQuery = function( selector, context ) {
 		return new jQuery.fn.init( selector, context );
 	};
 
-	jQuery.fn = jQuery.prototype = {};
+	jQuery.fn = jQuery.prototype = {
+		init: function(selector,context,rootjQuery){
+
+
+		}
+	};
 	//核心方法
 	//回归调用
 	//异步队列
@@ -35,5 +40,10 @@ var	jQuery = function( selector, context ) {
 	//事件体系
 	//ajax交互
 	//动画引擎
+	
+	jQuery.fn.init.prototype = jQuery.fn;
+
+	window.jQuery = window.$ = jQuery;
+
 	return jQuery;
 }));

@@ -20,12 +20,44 @@ var	jQuery = function( selector, context ) {
 		return new jQuery.fn.init( selector, context );
 	};
 
-	jQuery.fn = jQuery.prototype = {
-		init: function(selector,context,rootjQuery){
+jQuery.fn = jQuery.prototype = {
+	//101-194行
+	init: function(selector,context,rootjQuery){
+			var match, elem;
 
+			// HANDLE: $(""), $(null), $(undefined), $(false)
+			if ( !selector ) {
+				return this;
+			}
+
+			//HANDLE HTML strings
+			if(typeof selector === "string"){
+				if(selector.charAt(0) === "<" && selector.charAt(selector.length -1 ) === ">" && selector.length >= 3){
+					//Assume that strings that start and end with <> are HTML and skip the regex check
+					match = [null, selector, null];
+				}else {
+					match = rquickExpr.exec(selector);
+				}
+			//HANDLE:$(DOMElement)
+			}else if( selector.nodeType ){
+
+			//HANDLE:$(function)
+			//Shortcut for document ready
+			}else if(jQuery.isFunction(selector)){
+
+			}
+
+			if(selector.selector !=== undefined){
+
+			}
+
+			return jQuery.makeArray(selector, this);
 
 		}
-	};
+
+		//其他
+};//end of jQuery.fn
+
 	//核心方法
 	//回归调用
 	//异步队列

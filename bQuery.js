@@ -21,9 +21,19 @@ var	jQuery = function( selector, context ) {
 	};
 
 	jQuery.fn = jQuery.prototype = {};
-
-	//
-	//
-
+	//核心方法
+	//回归调用
+	//异步队列
+	//数据缓存
+	//队列操作
+	//选择器引
+	//属性操作
+	//节点遍历
+	//文档处理
+	//样式操作
+	//属性操作
+	//事件体系
+	//ajax交互
+	//动画引擎
 	return jQuery;
 }));
